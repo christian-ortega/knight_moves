@@ -1,10 +1,19 @@
 class Board
 
+  public
+
   attr_reader :board
 
   def initialize(dimension)
     @board = build_board(dimension)
   end
+
+  def knight_moves(start, destination)
+
+  end
+
+  
+  private
 
   def build_board(dimension)
     new_board = []
@@ -18,10 +27,7 @@ class Board
     new_board
   end
 
-  def knight_moves(start, destination)
-
-  end
-
+  # Finds all possible moves for a knight at a given tile location
   def possible_moves(location)
     return unless location.class == Array && location.length == 2 && board.include?(location)
     
@@ -40,4 +46,3 @@ class Board
 end
 
 b = Board.new(8)
-p b.possible_moves([4, 4])
